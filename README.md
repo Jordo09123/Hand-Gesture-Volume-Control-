@@ -1,5 +1,5 @@
 # Hand-Gesture-Volume-Control-
-Controlling the volume settings using hand gestures
+Controlling the volume settings using hand gestures - Done in Python with OpenCV and MediaPipe
 
 Before starting, make sure the required packages and modules are installed
 
