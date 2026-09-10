@@ -1,6 +1,6 @@
-# 🖐️ Hand Gesture Volume Control
+Hand Gesture Volume Control
 
-Control your Windows system volume in real time using just your hand — no keyboard, no mouse. A webcam tracks your hand with [MediaPipe](https://google.github.io/mediapipe/), measures the distance between your thumb and index finger, and maps that distance directly to your system's volume level.
+Control your Windows system volume in real time using just your hand, no keyboard, no mouse. A webcam tracks your hand with [MediaPipe](https://google.github.io/mediapipe/), measures the distance between your thumb and index finger, and maps that distance directly to your system's volume level.
 
 Built with **Python**, **OpenCV**, and **MediaPipe**.
 
@@ -8,13 +8,13 @@ Built with **Python**, **OpenCV**, and **MediaPipe**.
 
 ## How it works
 
-1. **`HandTrackingModule.py`** — a reusable module that wraps MediaPipe's hand-landmark detector. It finds a hand in each webcam frame and returns the pixel position of all 21 hand landmarks.
-2. **`VolumeHandControl.py`** — the main script. It:
+1. **`HandTrackingModule.py`** - a reusable module that wraps MediaPipe's hand-landmark detector. It finds a hand in each webcam frame and returns the pixel position of all 21 hand landmarks.
+2. **`VolumeHandControl.py`** - the main script. It:
    - Grabs landmark positions for the thumb tip (`#4`) and index fingertip (`#8`)
    - Calculates the distance between them
    - Maps that distance to the system's volume range using [`pycaw`](https://github.com/AndreMiras/pycaw) (Python Core Audio Windows Library)
    - Draws a live volume bar and FPS counter on the video feed
-3. **`HandTrackingMinimum.py`** — a minimal standalone demo of just the hand-tracking piece, useful for testing that MediaPipe/OpenCV are working before running the full volume control script.
+3. **`HandTrackingMinimum.py`** - a minimal standalone demo of just the hand-tracking piece, useful for testing that MediaPipe/OpenCV are working before running the full volume control script.
 
 Pinch your fingers together to lower the volume, spread them apart to raise it.
 
